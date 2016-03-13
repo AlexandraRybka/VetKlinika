@@ -1,0 +1,25 @@
+﻿
+@model authorization.Models.RegisterModel
+@{
+    ViewBag.Title = "Registration";
+}
+
+<div class="text-center button-text-distation1">
+    <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Registration &#8734;</strong></font></h3></div>
+
+
+    <div class="main-text button-text-distation">
+        @Html.ValidationSummary(false)
+
+        @using (Html.BeginForm())
+        {
+
+            <div class="main-text button-text-distation">
+                @Html.EditorForModel()
+                <p class="main-text button-text-distation">
+                    <button type="submit" class="btn btn-info">Registration</button>
+                </p>
+            </div>
+        }
+    </div>
+</div>

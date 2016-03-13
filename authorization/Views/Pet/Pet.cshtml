@@ -1,0 +1,25 @@
+﻿@model IEnumerable<authorization.Models.Pet>
+@{
+    ViewBag.Title = "Pet";
+}
+
+<div class="text-center button-text-distation1">
+    <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Pet &#8734;</strong></font></h3></div>
+
+    @foreach (var pet in Model)
+    {
+
+        <div class="main-text button-text-distation">
+            <div>@pet.Name</div>
+            <div>@pet.Type</div>
+            <div>@pet.Age</div>
+            <div>@pet.Diagnosis</div>
+        </div>
+
+        @Html.ActionLink("Edit Pet", "AddEditPet", "Pet", new { id = pet.Id }, new { @class = "btn btn-info" })
+        @Html.ActionLink("Delete Pet", "DeletePet", "Pet", new { id = pet.Id }, new { @class = "btn btn-info" })
+    }
+
+    @Html.ActionLink("Add Pet", "AddEditPet", "Pet", new { area = "" }, new { @class = "btn btn-info" })
+
+</div>

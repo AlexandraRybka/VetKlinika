@@ -1,0 +1,20 @@
+﻿@model authorization.Models.LogInModel
+@{
+    ViewBag.Title = "Log In";
+}
+
+<div class="text-center button-text-distation1">
+    <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Login &#8734;</strong></font></h3></div>
+
+    @Html.ValidationSummary(true)
+
+    @using (Html.BeginForm())
+    {
+        <div class="main-text button-text-distation">
+            @Html.EditorForModel()
+            <p class="main-text button-text-distation">
+                <button type="submit" class="btn btn-info">Log In</button>
+            </p>
+        </div>
+    }
+</div>

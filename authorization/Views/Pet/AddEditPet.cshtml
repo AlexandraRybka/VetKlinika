@@ -1,0 +1,18 @@
+﻿@model authorization.Models.Pet
+@{
+    ViewBag.Title = "AddEditPet";
+}
+
+<div class="text-center button-text-distation1">
+    <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Add Pet &#8734;</strong></font></h3></div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="main-text button-text-distation">
+            @Html.EditorForModel()
+            <p class="main-text button-text-distation">
+                <button type="submit" class="btn btn-info">Add Pet</button>
+            </p>
+        </div>
+    }
+</div>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<authorization.Models.Doctor>
+@{
+    ViewBag.Title = "Doctor";
+}
+
+<div class="text-center button-text-distation1">
+    <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Doctor &#8734;</strong></font></h3></div>
+
+
+    @foreach (var doctor in Model)
+    {
+        <div class="main-text button-text-distation">
+            <div>@doctor.FirstName</div>
+            <div>@doctor.LastName</div>
+            <div>@doctor.MiddleName</div>
+            <div>@doctor.Age</div>
+            <div>@doctor.Address</div>
+            <div>@doctor.Category</div>
+            <div>@doctor.Qualification</div>
+            <div>@doctor.Position</div>
+        </div>
+
+        @Html.ActionLink("Edit Doctor", "AddEditDoctor", "Doctor", new { id = doctor.Id }, new { @class = "btn btn-info" })
+        @Html.ActionLink("Delete Doctor", "DeleteDoctor", "Doctor", new { id = doctor.Id }, new { @class = "btn btn-info" })
+
+    }
+
+    @Html.ActionLink("Add Doctor", "AddEditDoctor", "Doctor", new { area = "" }, new { @class = "btn btn-info" })
+
+</div>

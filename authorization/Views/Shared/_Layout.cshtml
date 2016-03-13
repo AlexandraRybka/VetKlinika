@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html class="body-background ">
+<head>
+    <link href="~/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="body-background ">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header icon-user">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Veterinary clinic", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-right">
+                @if (Request.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Doctors", "Doctor", "Doctor", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+                    @Html.ActionLink("Your Pets", "Pet", "Pet", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Your Information", "Host", "Host", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Log Out", "LogOut", "Auth", new { area = "" }, new { @class = "navbar-brand" })
+
+                }
+                else {
+
+                    @Html.ActionLink("Login", "LogIn", "Auth", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Registration", "Registration", "Auth", new { area = "" }, new { @class = "navbar-brand " })
+                }
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            @RenderBody()
+
+        </div>
+        <script src="~/scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/scripts/bootstrap.min.js"></script>
+        <script src="~/bower_components/moment/moment.js"></script>
+        <script src="~/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    </div>
+</body>
+</html>

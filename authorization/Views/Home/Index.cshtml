@@ -1,0 +1,153 @@
+﻿@model authorization.Models.SheetsComments
+@{
+    ViewBag.Title = "Index";
+}
+
+<!--Information-->
+<div class="row">
+    <div class="col-md-3 ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="border">
+                    <div class="text-center button-text-distation1">
+                        <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Information &#8734;</strong></font></h3></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-center "><em> <u> Address:</u>  </em></div>
+                        <div>
+                            Mogilev, Jubilee district <br>
+                            Mikolutskogo 8<br>
+                        </div>
+                        <div>
+                            <div class="text-center ">
+                                <em>
+                                    <u>
+                                        Schedule:
+                                    </u>
+                                </em>
+                                <div>
+                                    <div>
+                                        8:30 - 22:00
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center ">
+                                <em>
+                                    <u>
+                                        Contact phone numbers
+                                    </u>
+                                </em>
+
+                                <div>
+
+                                    <div>
+                                        +375297777777  (MTS)<br>
+                                        +375447777777  (Velcom)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Donations-->
+            <div class="col-md-12 pull-left button-text-distation1">
+                <div class="border">
+                    <div class="text-center ">
+                        <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Donations &#8734;</strong></font></h3></div>
+                        <div class="pig">
+                            <img src="~/Resource/donation.jpg" alt="пожертвования" width="100" height="100">
+                        </div>
+                        <div class="button-text-distation ">
+                            @Html.ActionLink("Donation", "Donation", "Home", new { area = "" }, new { @class = "btn btn-info" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Appointments-->
+            <div class="col-md-12 pull-left button-text-distation1">
+                <div class="border">
+                    <div class="text-center ">
+                        <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Appointments &#8734;</strong></font></h3></div>
+
+                        <div>
+                            <div class="form-horizontal control-label button-text-distation">
+                                <div>
+                                    <div class="avatar"><img src="~/Resource/kalendar.jpg" alt="rfktylfhm" width="100" height="100"></div>
+                                </div>
+                                <div>
+                                    @Html.ActionLink("Appointments", "Appointments", "Home", new { area = "" }, new { @class = "btn btn-info" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 ">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-right button-text-distation1">
+                        <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Vet Klinika &#8734;</strong></font></h3></div>
+                    </div>
+                    <div>
+                        <img src="~/Resource/dog.jpg" />
+                    </div>
+                    <div class="text-right button-text-distation1">
+                        <div><h3><font face="Franklin Gothic Heavy">&#9829; We help our friends &#9829;</font></h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 button-text-distation1">
+        <!--Reviews-->
+        <div class="text-center  ">
+            <div class="border ">
+                <div class="text-center ">
+                    <div class="main-text"><h3><font face="Franklin Gothic Heavy"><strong>  &#8734; Reviews &#8734;</strong></font></h3></div>
+                </div>
+                <div>
+                    <div class="button-text-distation">
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm())
+                            {
+                                <div>
+                                    @Html.TextBoxFor(model => model.PersonalReview)
+                                </div>
+                                <div class="button-text-distation button-text-distation">
+                                    <button type="submit">Give Review</button>
+                                </div>
+                            }
+                        }
+                        @foreach (var item in Model.Reviews)
+                        {
+                            <div>
+                                <em>
+                                    <u>
+                                        @item.Name
+                                        @item.Review
+                                    </u>
+                                </em>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,50 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.body-background {
+    background-image: url(/Resource/Background.jpg);
+    background-position: left bottom;
+    background-repeat: repeat;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.border {
+    border-right-color: dimgray;
+    border-right-style: ridge;
+    border-right-width:7px;
+    border-bottom-color: dimgray;
+    border-bottom-style: ridge;
+    border-bottom-width:7px;
+    padding: 5px;
+}
+
+.main-text {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.button-text-distation{
+     padding: 5px;
+}
+
+.button-text-distation1{
+     padding: 8px;
+}
